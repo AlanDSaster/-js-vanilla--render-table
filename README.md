@@ -1,2 +1,7 @@
-# -js-vanilla--render-table
+# js-vanilla--render-table
 functions to convert an array into table data, then to render the equivalent html table in page
+
+When serving data from my API to my client app, I needed a way to dynamically render tables of data so I can propogate out the framework for multiple purposes. I've developed these functions to serve an array to the client to dynamically render the data without the use of templating engines like handlebars.
+
+<b>recordsToElementsData</b> will convert an array of data into a table object.
+<b>renderTable</b> will render the data contained within the table object as an html element and append it to the given html node elements by id, name, and className.
