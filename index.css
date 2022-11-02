@@ -3,9 +3,12 @@
   margin: 0;
 }
 
+
+button {
+      margin: 15px;
+}
+
 #test {
-  width: 100vw;
-  height: 100vh;
   background-color: #ccc;
   border: 4px inset gray;
 }
