@@ -10,5 +10,3 @@ function test() {
 	console.log('rendering records');
 	renderRecords(nodeIdentification, tableData);
 }
-
-test();
