@@ -9,6 +9,7 @@ function test() {
 	}
 	let headers = [ 'pemsnumber', 'vendor', 'catalognumber', 'producttype', 'productcategory', 'productclass' ];
 	let tableData = recordsToElementsData(records, headers);
+	console.log('rendering records');
 	renderRecords(nodeIdentification, tableData);
 }
 
