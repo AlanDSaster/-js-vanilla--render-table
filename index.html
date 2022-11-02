@@ -2,15 +2,46 @@
 <html>
 	<head>
 		<title>Testing</title>
-		<link rel='stylesheet' href='./index.css' />
-		<script type='text/javascript' src='./renderTable.js'></script>
-		<script type='text/javascript' src='./recordsToElementsData.js'></script>
-		<script type='text/javascript' src='./test.js' defer></script>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			#test {
+				width: 100vw;
+				height: 100vh;
+				background-color: #ccc;
+				border: 4px inset gray;
+			}
+
+			th,
+			td {
+				border: 1px solid black;
+				padding: 6px;
+			}
+		</style>
+		<script type='text/javascript' src='./public/js/TableController.js'></script>
 	</head>
 	<body>
-		<button onclick='test();'>Click To Render</button>
 		<div id='test'>
-			<h1>On Button Clicked : Data will be rendered here</h1>
+			<h1>On Load: Data will go here</h1>
 		</div>
+
+		<script type='text/javascript'>
+			(() => {
+				let tablecontroller = new TableController();
+				const records = [
+					{ itemcode : 'X1234', vendor : 'exampleVendor', catalognumber : '1234' },
+					{ itemcode : 'X543', vendor : 'anotherVendor', catalognumber : '543' }
+				];
+				let nodeIdentification = {
+					ids : [ 'test' ]
+				}
+				let headers = [ 'itemcode', 'vendor', 'catalognumber', 'producttype', 'productcategory', 'productclass' ];
+				let tableData = tablecontroller.recordsToElementsData(records, headers);
+				tablecontroller.renderRecords(nodeIdentification, tableData);
+			})();
+		</script>
 	</body>
 </html>
