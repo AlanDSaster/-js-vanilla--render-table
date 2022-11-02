@@ -5,25 +5,11 @@
 		<link rel='stylesheet' href='./index.css' />
 		<script type='text/javascript' src='./renderTable.js'></script>
 		<script type='text/javascript' src='./recordsToElementsData.js'></script>
+		<script type='text/javascript' src='./test.js' defer></script>
 	</head>
 	<body>
 		<div id='test'>
 			<h1>On Load: Data will be rendered here</h1>
 		</div>
-
-		<script type='text/javascript'>
-			(() => {
-				const records = [
-					{ itemcode : 'X1234', vendor : 'exampleVendor', catalognumber : '1234' },
-					{ itemcode : 'X543', vendor : 'anotherVendor', catalognumber : '543' }
-				];
-				let nodeIdentification = {
-					ids : [ 'test' ]
-				}
-				let headers = [ 'pemsnumber', 'vendor', 'catalognumber', 'producttype', 'productcategory', 'productclass' ];
-				let tableData = recordsToElementsData(records, headers);
-				renderRecords(nodeIdentification, tableData);
-			})();
-		</script>
 	</body>
 </html>
