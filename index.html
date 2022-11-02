@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Testing</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			#test {
+				width: 100vw;
+				height: 100vh;
+				background-color: #ccc;
+				border: 4px inset gray;
+			}
+
+			th,
+			td {
+				border: 1px solid black;
+				padding: 6px;
+			}
+		</style>
+		<script type='text/javascript' src='./renderTable.js'></script>
+		<script type='text/javascript' src='./recordsToElementsData.js'></script>
+	</head>
+	<body>
+		<div id='test'>
+			<h1>On Load: Data will go here</h1>
+		</div>
+
+		<script type='text/javascript'>
+			(() => {
+				const records = [
+					{ itemcode : 'X1234', vendor : 'exampleVendor', catalognumber : '1234' },
+					{ itemcode : 'X543', vendor : 'anotherVendor', catalognumber : '543' }
+				];
+				let nodeIdentification = {
+					ids : [ 'test' ]
+				}
+				let headers = [ 'pemsnumber', 'vendor', 'catalognumber', 'producttype', 'productcategory', 'productclass' ];
+				let tableData = recordsToElementsData(records, headers);
+				renderRecords(nodeIdentification, tableData);
+			})();
+		</script>
+	</body>
+</html>
