@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#test {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ccc;
+  border: 4px inset gray;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 6px;
+}
