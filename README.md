@@ -11,3 +11,6 @@
 <p>
   <b>renderTable</b> will render the data contained within the table object as an html element and append it to the given html node elements by id, name, and className.
 </p>
+<p>
+  I will probably wrap this into a Class definition later for portability and modular implementation.
+</p>
